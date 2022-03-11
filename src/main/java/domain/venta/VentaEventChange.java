@@ -1,6 +1,9 @@
 package domain.venta;
 
 import co.com.sofka.domain.generic.EventChange;
+import domain.venta.entities.Cotizacion;
+import domain.venta.entities.Factura;
+import domain.venta.entities.TestDrive;
 import domain.venta.event.*;
 import domain.venta.valueobject.TestDriveId;
 
@@ -18,15 +21,15 @@ public class VentaEventChange extends EventChange {
         });
 
         apply((VendedorCambiado event) -> {
-            venta.cambiarVendedor(event.getVendedorId());
+            venta.factura.cambiarVendedor(event.getVendedorId());
         });
 
         apply((FechaModificada event) -> {
-            venta.modificarFecha(event.getFechaString());
+            venta.factura.modificarFecha(event.getFechaString());
         });
 
         apply((CostoModificado event) -> {
-            venta.modificarCosto(event.getDenomination());
+            venta.cotizacion.modificarCosto(event.getDenomination());
         });
 
         apply((TestDriveCompletado event) -> {
@@ -38,15 +41,16 @@ public class VentaEventChange extends EventChange {
         });
 
         apply((FacturaCreada event) ->{
-            venta.crearFactura(event.getFacturaId(),event.getVendedorId());
+            venta.factura = new Factura(event.getFacturaId(),event.getVendedorId());
         });
 
         apply((CotizacionCreada event) -> {
-            venta.crearCotizacion(event.getCotizacionId(),event.getDenomination());
+            venta.cotizacion = new Cotizacion(event.getCotizacionId(), event.getDenomination());
         });
 
         apply((TestDriveCreado event) -> {
-            venta.crearTestDrive(event.getTestDriveId());
+            venta.testDrives.put(event.getTestDriveId().value(),
+                    new TestDrive(event.getTestDriveId()));
         });
 
 
