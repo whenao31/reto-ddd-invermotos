@@ -1,9 +1,9 @@
 package domain.cliente;
 
 import co.com.sofka.domain.generic.EventChange;
-import domain.cliente.event.ClienteCreado;
-import domain.cliente.event.FinanciacionAprobada;
-import domain.cliente.event.PuntajeCambiado;
+import domain.cliente.entitie.DatosPersonales;
+import domain.cliente.entitie.Financiacion;
+import domain.cliente.event.*;
 import domain.cliente.valueobject.Fecha;
 
 public class ClienteEventChange extends EventChange {
@@ -20,9 +20,20 @@ public class ClienteEventChange extends EventChange {
         });
 
         apply((FinanciacionAprobada event) -> {
-            cliente.financiacion.aprobarFinanciacion(); //Revisar
+            cliente.financiacion.aprobarFinanciacion();
         });
 
+        apply((FinanciacionNegada event) -> {
+            cliente.financiacion.negarFinanciacion();
+        });
+
+        apply((DatosPersonalesCreados event) -> {
+            cliente.datosPersonales = new DatosPersonales(event.getDatosPersonalesId(), event.getNombre());
+        });
+
+        apply((FinanciacionCreada event) -> {
+            cliente.financiacion = new Financiacion(event.getFinanciacionId(), event.getDenomination());
+        });
 
 
 

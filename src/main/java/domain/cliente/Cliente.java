@@ -4,13 +4,8 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import domain.cliente.entitie.DatosPersonales;
 import domain.cliente.entitie.Financiacion;
-import domain.cliente.event.ClienteCreado;
-import domain.cliente.event.FinanciacionAprobada;
-import domain.cliente.event.PuntajeCambiado;
-import domain.cliente.valueobject.ClienteId;
-import domain.cliente.valueobject.Fecha;
-import domain.cliente.valueobject.FinanciacionId;
-import domain.cliente.valueobject.PuntajeCrediticio;
+import domain.cliente.event.*;
+import domain.cliente.valueobject.*;
 
 import java.util.List;
 
@@ -40,11 +35,19 @@ public class Cliente extends AggregateEvent<ClienteId> {
         appendChange(new PuntajeCambiado(puntajeCrediticio)).apply();
     }
 
-    public void aprobarFinanciacion(FinanciacionId financiacionId){
-        appendChange(new FinanciacionAprobada(financiacionId)).apply();
+    public void aprobarFinanciacion(){
+        appendChange(new FinanciacionAprobada()).apply();
     }
 
     public void negarFinanciacion(){
-       // appendChange(new FinanciacionNegada()).apply();
+        appendChange(new FinanciacionNegada()).apply();
+    }
+
+    public void crearDatosPersonales(DatosPersonalesId datosPersonalesId, Nombre nombre){
+        appendChange(new DatosPersonalesCreados(datosPersonalesId, nombre)).apply();
+    }
+
+    public void crearFinanciacion(FinanciacionId financiacionId, double denomination){
+        appendChange(new FinanciacionCreada(financiacionId, denomination)).apply();
     }
 }
