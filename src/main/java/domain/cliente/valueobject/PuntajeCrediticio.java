@@ -9,12 +9,16 @@ public class PuntajeCrediticio implements ValueObject<PuntajeCrediticio.Puntaje>
         this.value = value;
     }
 
+    public PuntajeCrediticio(){
+        this.value = Puntaje.ESTUDIO;
+    }
+
     @Override
     public PuntajeCrediticio.Puntaje value() {
         return value;
     }
 
     public enum Puntaje {
-        NEGATIVO, POSITIVO
+        NEGATIVO, POSITIVO, ESTUDIO
     }
 }
