@@ -13,10 +13,10 @@ public class DatosMoto extends Entity<DatosMotoId> {
     private Color color;
     private Linea linea;
 
-    public DatosMoto(DatosMotoId entityId) {
-        super(entityId);
+    public DatosMoto(DatosMotoId motoId) {
+        super(motoId);
         this.modelo = new Modelo(LocalDate.now().getYear());
-        this.color = null;
+        this.color = new Color(Color.Opcion.NEUTRO);
         this.linea = new Linea();
     }
 

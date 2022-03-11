@@ -15,6 +15,6 @@ public class Color implements ValueObject<Color.Opcion> {
     }
 
     public enum Opcion {
-        PLATA, NEGRO, BLANCO_PERLADO, ROJO_PERLADO
+        NEUTRO, PLATA, NEGRO, BLANCO_PERLADO, ROJO_PERLADO
     }
 }

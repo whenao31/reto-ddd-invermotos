@@ -1,7 +1,5 @@
 
 `
-0src/main/java/domain/moto/valueobject/Color.java,1/f/1f1c94b21656dd51453488105fdbe390c5b63673
-`
 0src/main/java/domain/moto/valueobject/Linea.java,4/3/43bf0c18decb400f4c4a3118d204ab4ee7c00fbb
 a
 1src/main/java/domain/moto/valueobject/Modelo.java,c/d/cdd2f1e297e9febbcaaf7b9a55dc7b8f9c1eea02
