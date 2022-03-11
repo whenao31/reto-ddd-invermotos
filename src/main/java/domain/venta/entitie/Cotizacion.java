@@ -9,10 +9,10 @@ public class Cotizacion extends Entity<CotizacionId> {
     private Fecha  fecha;
     private Dinero costoTotal;
 
-    public Cotizacion(CotizacionId entityId, double denomination) {
+    public Cotizacion(CotizacionId entityId) {
         super(entityId);
         this.fecha = new Fecha();
-        this.costoTotal = new Dinero(denomination);
+        this.costoTotal = null;
     }
 
     public void modificarCosto(double denomination){

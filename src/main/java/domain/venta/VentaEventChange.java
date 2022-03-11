@@ -44,7 +44,7 @@ public class VentaEventChange extends EventChange {
         });
 
         apply((CotizacionCreada event) -> {
-            venta.cotizacion = new Cotizacion(event.getCotizacionId(), event.getDenomination());
+            venta.cotizacion = new Cotizacion(event.getCotizacionId());
         });
 
         apply((TestDriveCreado event) -> {

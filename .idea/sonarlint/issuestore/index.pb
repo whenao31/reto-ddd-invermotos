@@ -21,10 +21,6 @@ a
 1src/main/java/domain/venta/entitie/TestDrive.java,e\0\e0dbb59ba8155aa416f554eb6f6c3adb586e2914
 e
 5src/main/java/domain/venta/event/TestDriveCreado.java,4\0\40463fc128dfa7bb40a75605447a1ed2d131eae4
-f
-6src/main/java/domain/venta/event/CotizacionCreada.java,c\3\c37396b4e44fa0b1d17a0672a2e780cd60ad1e3f
-b
-2src/main/java/domain/venta/valueobject/Dinero.java,d\3\d31a241fb28856d17aee559877b08fd9775e8080
 c
 3src/main/java/domain/venta/valueobject/VentaId.java,6\c\6cc4f59e423382bb885a24f53329be2cfa3cd212
 k
@@ -35,8 +31,6 @@ d
 4src/main/java/domain/cliente/valueobject/Nombre.java,9\d\9d27822ccab8304f1b9abc3a064fde07adeeb241
 l
 <src/main/java/domain/cliente/valueobject/FinanciacionId.java,7\5\75ac483c5142ac0d1e417a3e1803457c1ec407f9
-b
-2src/main/java/domain/venta/entitie/Cotizacion.java,6\8\68e8d9925ace4dbe2afbb519850b8a866d0ad49b
 e
 5src/main/java/domain/venta/valueobject/ClienteId.java,e\7\e7959b8d47876bf16ba72d5cfbe13e5ebc09165c
 p
@@ -51,5 +45,3 @@ e
 5src/main/java/domain/venta/event/FechaModificada.java,a\f\af5013c52bfb144a73f83004f44e28577927b989
 f
 6src/main/java/domain/venta/event/VendedorCambiado.java,5\d\5d8fb723a17355330cdecf3bd3e17f117a70ab5a
-`
-0src/main/java/domain/venta/VentaEventChange.java,b\9\b9797fec40c50d67287537f384a96e0e5140b0a2

@@ -9,14 +9,10 @@ import domain.venta.valueobject.VentaId;
 public class CrearCotizacion extends Command {
     private final VentaId      ventaId;
     private final CotizacionId cotizacionId;
-    private final Fecha fecha;
-    private final Dinero costoTotal;
 
-    public CrearCotizacion(VentaId ventaId, CotizacionId cotizacionId, Fecha fecha, Dinero costoTotal) {
+    public CrearCotizacion(VentaId ventaId, CotizacionId cotizacionId) {
         this.ventaId = ventaId;
         this.cotizacionId = cotizacionId;
-        this.fecha = fecha;
-        this.costoTotal = costoTotal;
     }
 
     public VentaId getVentaId() {
@@ -27,11 +23,4 @@ public class CrearCotizacion extends Command {
         return cotizacionId;
     }
 
-    public Fecha getFecha() {
-        return fecha;
-    }
-
-    public Dinero getCostoTotal() {
-        return costoTotal;
-    }
 }
