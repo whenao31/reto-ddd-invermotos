@@ -20,7 +20,13 @@ public class Moto extends AggregateEvent<MotoId> {
         subscribe(new MotoEventChange(this));
     }
 
-//    constructor privado que es usado por el metodo "form()"
+    public Moto(MotoId motoId, DatosMoto datosMoto, DisponibilidadMoto disponibilidad) {
+        super(motoId);
+        appendChange(new MotoCreadaConDatos(datosMoto, disponibilidad)).apply();
+        subscribe(new MotoEventChange(this));
+    }
+
+    //    constructor privado que es usado por el metodo "form()"
     private Moto(MotoId motoId){
         super(motoId);
         subscribe(new MotoEventChange(this));
@@ -34,7 +40,7 @@ public class Moto extends AggregateEvent<MotoId> {
     }
 
     public void crearDatosMoto(DatosMotoId datosMotoId, Modelo modelo, Color color, Linea linea){
-        appendChange(new DatosMotoCreado(datosMotoId, modelo, color, linea));
+        appendChange(new DatosMotoCreado(datosMotoId, modelo, color, linea)).apply();
     }
 
     public void crearFabrica(FabricaId fabricaIdId, NombreFabrica nombre, Representante representante){
@@ -42,7 +48,7 @@ public class Moto extends AggregateEvent<MotoId> {
     }
 
     public void crearAdicional(AdicionalId adicionalId, EstadoAdicional estado, Descripcion descripcion){
-        appendChange(new AdicionalCreado(adicionalId, estado, descripcion));
+        appendChange(new AdicionalCreado(adicionalId, estado, descripcion)).apply();
     }
 
     public void pintar(Color.Opcion color){

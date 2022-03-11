@@ -1,12 +1,6 @@
 
-f
-6src/main/java/domain/moto/valueobject/AdicionalId.java,1/d/1dfc75297f09789991200c9ef6a7c71be313311e
 `
 0src/main/java/domain/moto/valueobject/Color.java,1/f/1f1c94b21656dd51453488105fdbe390c5b63673
-f
-6src/main/java/domain/moto/valueobject/DatosMotoId.java,0/a/0aac13f7ff4eeacc95111ddd0e5ebd9fbcbb94ea
-d
-4src/main/java/domain/moto/valueobject/FabricaId.java,e/f/ef0996229b2a79c8ff634cab245eff4abcd28326
 `
 0src/main/java/domain/moto/valueobject/Linea.java,4/3/43bf0c18decb400f4c4a3118d204ab4ee7c00fbb
 a
@@ -15,3 +9,21 @@ a
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 h
 8src/main/java/domain/moto/valueobject/Representante.java,1/f/1fa2fcd2f029373bbf5c3a884debf56419b599a9
+h
+8src/main/java/domain/moto/valueobject/NombreFabrica.java,0/6/0635d477a2839dfba62cc16ce527ed465367a2ef
+g
+7src/main/java/domain/moto/event/AdicionalInstalado.java,d/6/d61697e289992b50980f0fa38d2308e5d1b602f7
+s
+Csrc/main/java/domain/moto/event/CategoriaRepresentanteCambiada.java,7/9/79ad0c9ce4cb3db8aa40549179f078bd7ee64241
+d
+4src/main/java/domain/moto/event/DatosMotoCreado.java,3/6/36ef601d6e626e9a11ed584a84ad166364834074
+f
+6src/main/java/domain/moto/valueobject/Descripcion.java,e/d/ed1b4f416ee4f6827a14d5e391ee0a2f10257d3c
+b
+2src/main/java/domain/moto/event/FabricaCreada.java,1/1/116243651e28cefd12083eadc6c6f977f0bea76b
+f
+6src/main/java/domain/moto/event/FabricaRenombrada.java,e/f/ef654880319c35d105f1ab678b31e9b0a7e6e6da
+b
+2src/main/java/domain/moto/event/LineaCambiada.java,a/1/a1ae6f974cb03e6432970f39e94ceb466807c172
+c
+3src/main/java/domain/moto/event/ModeloCambiado.java,1/4/145c9676c768747eeea8ab861a6d3ed5f902f567
