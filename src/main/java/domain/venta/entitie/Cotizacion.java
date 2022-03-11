@@ -1,4 +1,4 @@
-package domain.venta.entities;
+package domain.venta.entitie;
 
 import co.com.sofka.domain.generic.Entity;
 import domain.venta.valueobject.CotizacionId;

@@ -1,7 +1,6 @@
 package domain.venta.event;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import domain.venta.entities.Factura;
 import domain.venta.valueobject.FacturaId;
 import domain.venta.valueobject.VendedorId;
 

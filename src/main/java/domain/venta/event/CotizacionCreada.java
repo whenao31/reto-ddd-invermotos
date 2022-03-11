@@ -1,7 +1,6 @@
 package domain.venta.event;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import domain.venta.entities.Cotizacion;
 import domain.venta.valueobject.CotizacionId;
 
 public class CotizacionCreada extends DomainEvent {

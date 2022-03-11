@@ -2,7 +2,7 @@ package domain.venta;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import domain.venta.entities.*;
+import domain.venta.entitie.*;
 import domain.venta.event.*;
 import domain.venta.valueobject.*;
 
