@@ -17,6 +17,7 @@ public class Moto extends AggregateEvent<MotoId> {
     public Moto(MotoId motoId, DisponibilidadMoto disponibilidad) {
         super(motoId);
         appendChange(new MotoCreada(disponibilidad)).apply();
+//        Solo los eventos que cambian el estado del agregado deben ser suscritos al EventChange
         subscribe(new MotoEventChange(this));
     }
 
@@ -80,4 +81,12 @@ public class Moto extends AggregateEvent<MotoId> {
     }
 
     public Map<String, Adicional> adicionales(){return adicionales;}
+
+    public Fabrica fabrica() {
+        return fabrica;
+    }
+
+    public DatosMoto datosMoto() {
+        return datosMoto;
+    }
 }
