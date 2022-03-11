@@ -20,9 +20,13 @@ public class Moto extends AggregateEvent<MotoId> {
         subscribe(new MotoEventChange(this));
     }
 
-    public Moto(MotoId motoId, DatosMoto datosMoto, DisponibilidadMoto disponibilidad) {
+    public Moto(MotoId motoId,
+                DisponibilidadMoto disponibilidad,
+                DatosMotoId datosMotoId, Modelo modelo,
+                Color color, Linea linea) {
         super(motoId);
-        appendChange(new MotoCreadaConDatos(datosMoto, disponibilidad)).apply();
+        appendChange(new MotoCreadaConDatos(disponibilidad,
+                datosMotoId, modelo, color, linea)).apply();
         subscribe(new MotoEventChange(this));
     }
 
@@ -33,7 +37,7 @@ public class Moto extends AggregateEvent<MotoId> {
     }
 
 //    Metodo para reconstruir el estado del agregado a partir de los eventos guardados
-    private static Moto from(MotoId motoId, List<DomainEvent> events){
+    public static Moto from(MotoId motoId, List<DomainEvent> events){
         var moto = new Moto(motoId);
         events.forEach(moto::applyEvent);
         return moto;

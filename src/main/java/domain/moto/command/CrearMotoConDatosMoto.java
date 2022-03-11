@@ -2,29 +2,51 @@ package domain.moto.command;
 
 import co.com.sofka.domain.generic.Command;
 import domain.moto.DatosMoto;
-import domain.moto.valueobject.DisponibilidadMoto;
-import domain.moto.valueobject.MotoId;
+import domain.moto.valueobject.*;
 
 public class CrearMotoConDatosMoto extends Command {
     private final MotoId motoId;
-    private final DatosMoto datosMoto;
     private final DisponibilidadMoto disponibilidad;
+    private final DatosMotoId datosMotoId;
+    private final Modelo modelo;
+    private final Color color;
+    private final Linea linea;
 
-    public CrearMotoConDatosMoto(MotoId motoId, DatosMoto datosMoto, DisponibilidadMoto disponibilidad) {
+    public CrearMotoConDatosMoto(MotoId motoId,
+                                 DisponibilidadMoto disponibilidad,
+                                 DatosMotoId datosMotoId,
+                                 Modelo modelo,
+                                 Color color,
+                                 Linea linea) {
         this.motoId = motoId;
-        this.datosMoto = datosMoto;
         this.disponibilidad = disponibilidad;
+        this.datosMotoId = datosMotoId;
+        this.modelo = modelo;
+        this.color = color;
+        this.linea = linea;
     }
 
     public MotoId getMotoId() {
         return motoId;
     }
 
-    public DatosMoto getDatosMoto() {
-        return datosMoto;
-    }
-
     public DisponibilidadMoto getDisponibilidad() {
         return disponibilidad;
+    }
+
+    public DatosMotoId getDatosMotoId() {
+        return datosMotoId;
+    }
+
+    public Modelo getModelo() {
+        return modelo;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public Linea getLinea() {
+        return linea;
     }
 }

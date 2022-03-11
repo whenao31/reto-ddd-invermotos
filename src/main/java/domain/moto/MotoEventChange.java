@@ -16,7 +16,12 @@ public class MotoEventChange extends EventChange {
         });
 
         apply((MotoCreadaConDatos event) -> {
-            moto.datosMoto = event.getDatosMoto();
+            moto.datosMoto = new DatosMoto(
+                    event.getDatosMotoId(),
+                    event.getModelo(),
+                    event.getColor(),
+                    event.getLinea()
+                    );
             moto.disponibilidad = event.getDisponibilidadMoto();
             moto.fabrica = null;
             moto.adicionales = new HashMap<>();

@@ -17,16 +17,21 @@ class CrearMotoConDatosUseCaseTest {
     void crearMotoConDatos() {
 //        Arrange
         MotoId motoId = MotoId.of("motoId1");
+        DisponibilidadMoto disponibilidad = new DisponibilidadMoto(DisponibilidadMoto.Estado.DISPONIBLE);
 
         DatosMotoId datosMotoId = DatosMotoId.of("datosmotoId1");
         Modelo modelo = new Modelo(2022);
         Color color = new Color(Color.Opcion.NEGRO);
         Linea linea = new Linea("scooter");
-        DatosMoto datosMoto = new DatosMoto(datosMotoId, modelo, color, linea);
 
-        DisponibilidadMoto disponibilidad = new DisponibilidadMoto(DisponibilidadMoto.Estado.DISPONIBLE);
-
-        CrearMotoConDatosMoto crearMotoConDatosMoto = new CrearMotoConDatosMoto(motoId, datosMoto, disponibilidad);
+        CrearMotoConDatosMoto crearMotoConDatosMoto = new CrearMotoConDatosMoto(
+                motoId,
+                disponibilidad,
+                datosMotoId,
+                modelo,
+                color,
+                linea
+        );
 
 //        Act
         CrearMotoConDatosUseCase useCase = new CrearMotoConDatosUseCase();
@@ -38,7 +43,7 @@ class CrearMotoConDatosUseCaseTest {
         var event = (MotoCreadaConDatos) events.get(0);
         Assertions.assertEquals("moto.motocreadacondatos", event.type);
         Assertions.assertEquals("motoId1", event.aggregateRootId());
-        Assertions.assertEquals("datosmotoId1", event.getDatosMoto().identity().value());
-        Assertions.assertEquals(Color.Opcion.NEGRO, event.getDatosMoto().color().value());
+        Assertions.assertEquals("datosmotoId1", event.getDatosMotoId().value());
+        Assertions.assertEquals(Color.Opcion.NEGRO, event.getColor().value());
     }
 }
