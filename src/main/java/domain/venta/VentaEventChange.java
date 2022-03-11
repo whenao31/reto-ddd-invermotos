@@ -2,6 +2,8 @@ package domain.venta;
 
 import co.com.sofka.domain.generic.EventChange;
 import domain.venta.event.*;
+import domain.venta.valueobject.TestDriveId;
+
 import java.util.HashMap;
 
 public class VentaEventChange extends EventChange {
@@ -33,6 +35,18 @@ public class VentaEventChange extends EventChange {
 
         apply((TestDriveCancelado event) -> {
             venta.testDrives.get(event.getTestDriveId().value()).cancelarTestDrive();
+        });
+
+        apply((FacturaCreada event) ->{
+            venta.crearFactura(event.getFacturaId(),event.getVendedorId());
+        });
+
+        apply((CotizacionCreada event) -> {
+            venta.crearCotizacion(event.getCotizacionId(),event.getDenomination());
+        });
+
+        apply((TestDriveCreado event) -> {
+            venta.crearTestDrive(event.getTestDriveId());
         });
 
 

@@ -53,4 +53,16 @@ public class Venta extends AggregateEvent<VentaId> {
         appendChange(new TestDriveCancelado(testDriveId)).apply();
     }
 
+    public void crearFactura(FacturaId facturaId, VendedorId vendedorId){
+        appendChange(new FacturaCreada(facturaId, vendedorId)).apply();
+    }
+    
+    public void crearCotizacion(CotizacionId cotizacionId, double denomination){
+        appendChange(new CotizacionCreada(cotizacionId, denomination)).apply();
+    }
+
+    public void crearTestDrive(TestDriveId testDriveId){
+        appendChange(new TestDriveCreado(testDriveId)).apply();
+    }
+
 }
