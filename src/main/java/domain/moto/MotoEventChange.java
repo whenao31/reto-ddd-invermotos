@@ -40,7 +40,8 @@ public class MotoEventChange extends EventChange {
         });
 
         apply((AdicionalCreado event) -> {
-            moto.adicionales.put(event.getAdicionalId().value(),
+            moto.adicionales.put(
+                    event.getAdicionalId().value(),
                     new Adicional(event.getAdicionalId(), event.getEstado(), event.getDescripcion())
             );
         });
