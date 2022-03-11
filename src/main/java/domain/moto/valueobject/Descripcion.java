@@ -8,7 +8,7 @@ public class Descripcion implements ValueObject<String> {
     private final String descripcion;
 
     public Descripcion() {
-        this("");
+        this("descripcion dummy");
     }
 
     public Descripcion(String descripcion) {
