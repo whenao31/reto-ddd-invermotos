@@ -3,28 +3,23 @@ package domain.venta.comand;
 import co.com.sofka.domain.generic.Command;
 import domain.venta.valueobject.EstadoTestDrive;
 import domain.venta.valueobject.Fecha;
+import domain.venta.valueobject.TestDriveId;
 import domain.venta.valueobject.VentaId;
 
 public class CrearTestDrive extends Command {
     private final VentaId ventaId;
-    private final Fecha   fecha;
-    private final EstadoTestDrive estadoTestDrive;
+    private final TestDriveId testDriveId;
 
-    public CrearTestDrive(VentaId ventaId, Fecha fecha, EstadoTestDrive estadoTestDrive) {
+    public CrearTestDrive(VentaId ventaId, TestDriveId testDriveId) {
         this.ventaId = ventaId;
-        this.fecha = fecha;
-        this.estadoTestDrive = estadoTestDrive;
+        this.testDriveId = testDriveId;
     }
 
     public VentaId getVentaId() {
         return ventaId;
     }
 
-    public Fecha getFecha() {
-        return fecha;
-    }
-
-    public EstadoTestDrive getEstadoTestDrive() {
-        return estadoTestDrive;
+    public TestDriveId getTestDriveId() {
+        return testDriveId;
     }
 }
