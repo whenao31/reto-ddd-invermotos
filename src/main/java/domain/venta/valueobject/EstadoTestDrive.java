@@ -15,6 +15,6 @@ public class EstadoTestDrive implements ValueObject<EstadoTestDrive.Estado> {
     }
 
     public enum Estado {
-        SATISFECHO, NO_SATISFECHO
+        COMPLETADO, CANCELADO, PENDIENTE
     }
 }
