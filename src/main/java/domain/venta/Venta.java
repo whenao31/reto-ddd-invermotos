@@ -1,18 +1,20 @@
 package domain.venta;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import domain.venta.entities.*;
-import domain.venta.event.VentaCreada;
+import domain.venta.event.*;
 import domain.venta.valueobject.*;
 
 import java.util.List;
+import java.util.Map;
 
 public class Venta extends AggregateEvent<VentaId> {
-    protected MotoId motoId;
-    protected ClienteId clienteId;
-    protected List<TestDrive> testDrives;
-    protected Cotizacion cotizacion;
-    protected Factura factura;
+    protected MotoId         motoId;
+    protected ClienteId      clienteId;
+    protected Map<String, TestDrive> testDrives;
+    protected Cotizacion     cotizacion;
+    protected Factura        factura;
 
     public Venta(VentaId ventaId, MotoId motoId, ClienteId clienteId) {
         super(ventaId);
@@ -20,24 +22,35 @@ public class Venta extends AggregateEvent<VentaId> {
         subscribe(new VentaEventChange(this));
     }
 
-    public void cambiarVendedor(){
-
+    private Venta(VentaId ventaId){
+        super(ventaId);
+        subscribe(new VentaEventChange(this));
+    }
+//Reestablecer el estado del agregado
+    private static Venta from(VentaId ventaId, List<DomainEvent> events){
+        var venta = new Venta(ventaId);
+        events.forEach(venta::applyEvent);
+        return venta;
     }
 
-    public void modificarFecha(){
-
+    public void cambiarVendedor(VendedorId vendedorId){
+        appendChange(new VendedorCambiado(vendedorId)).apply();
     }
 
-    public void modificarCosto(){
-
+    public void modificarFecha(String fechaString){
+        appendChange(new FechaModificada(fechaString)).apply();
     }
 
-    public void completarTestDrive(){
-
+    public void modificarCosto(double denomination){
+        appendChange(new CostoModificado(denomination)).apply();
     }
 
-    public void cancelarTestDrive(){
+    public void completarTestDrive(TestDriveId testDriveId){
+        appendChange(new TestDriveCompletado(testDriveId)).apply();
+    }
 
+    public void cancelarTestDrive(TestDriveId testDriveId){
+        appendChange(new TestDriveCancelado(testDriveId)).apply();
     }
 
 }
