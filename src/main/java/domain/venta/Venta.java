@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Map;
 
 public class Venta extends AggregateEvent<VentaId> {
-    protected MotoId         motoId;
-    protected ClienteId      clienteId;
+    protected MotoId                 motoId;
+    protected ClienteId              clienteId;
     protected Map<String, TestDrive> testDrives;
-    protected Cotizacion     cotizacion;
-    protected Factura        factura;
+    protected Cotizacion             cotizacion;
+    protected Factura                factura;
 
     public Venta(VentaId ventaId, MotoId motoId, ClienteId clienteId) {
         super(ventaId);
@@ -22,46 +22,47 @@ public class Venta extends AggregateEvent<VentaId> {
         subscribe(new VentaEventChange(this));
     }
 
-    private Venta(VentaId ventaId){
+    private Venta(VentaId ventaId) {
         super(ventaId);
         subscribe(new VentaEventChange(this));
     }
-//Reestablecer el estado del agregado
-    private static Venta from(VentaId ventaId, List<DomainEvent> events){
+
+    //Reestablecer el estado del agregado
+    private static Venta from(VentaId ventaId, List<DomainEvent> events) {
         var venta = new Venta(ventaId);
         events.forEach(venta::applyEvent);
         return venta;
     }
 
-    public void cambiarVendedor(VendedorId vendedorId){
+    public void cambiarVendedor(VendedorId vendedorId) {
         appendChange(new VendedorCambiado(vendedorId)).apply();
     }
 
-    public void modificarFecha(String fechaString){
+    public void modificarFecha(String fechaString) {
         appendChange(new FechaModificada(fechaString)).apply();
     }
 
-    public void modificarCosto(double denomination){
+    public void modificarCosto(double denomination) {
         appendChange(new CostoModificado(denomination)).apply();
     }
 
-    public void completarTestDrive(TestDriveId testDriveId){
+    public void completarTestDrive(TestDriveId testDriveId) {
         appendChange(new TestDriveCompletado(testDriveId)).apply();
     }
 
-    public void cancelarTestDrive(TestDriveId testDriveId){
+    public void cancelarTestDrive(TestDriveId testDriveId) {
         appendChange(new TestDriveCancelado(testDriveId)).apply();
     }
 
-    public void crearFactura(FacturaId facturaId, VendedorId vendedorId){
+    public void crearFactura(FacturaId facturaId, VendedorId vendedorId) {
         appendChange(new FacturaCreada(facturaId, vendedorId)).apply();
     }
-    
-    public void crearCotizacion(CotizacionId cotizacionId, double denomination){
+
+    public void crearCotizacion(CotizacionId cotizacionId, double denomination) {
         appendChange(new CotizacionCreada(cotizacionId, denomination)).apply();
     }
 
-    public void crearTestDrive(TestDriveId testDriveId){
+    public void crearTestDrive(TestDriveId testDriveId) {
         appendChange(new TestDriveCreado(testDriveId)).apply();
     }
 
