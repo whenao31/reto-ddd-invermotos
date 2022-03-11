@@ -9,9 +9,9 @@ public class TestDrive extends Entity<TestDriveId> {
     private Fecha fecha;
     private EstadoTestDrive estadoTestDrive;
 
-    public TestDrive(TestDriveId entityId, Fecha fecha) {
+    public TestDrive(TestDriveId entityId) {
         super(entityId);
-        this.fecha = fecha;
+        this.fecha = new Fecha();
         this.estadoTestDrive =  new EstadoTestDrive(EstadoTestDrive.Estado.PENDIENTE);
     }
 
