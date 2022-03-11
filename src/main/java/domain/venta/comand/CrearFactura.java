@@ -9,13 +9,12 @@ import domain.venta.valueobject.VentaId;
 public class CrearFactura extends Command {
     private final VentaId    ventaId;
     private final FacturaId  facturaId;
-    private final Fecha      fecha;
     private final VendedorId vendedorId;
 
-    public CrearFactura(VentaId ventaId, FacturaId facturaId, Fecha fecha, VendedorId vendedorId) {
+    public CrearFactura(VentaId ventaId, FacturaId facturaId, VendedorId vendedorId) {
         this.ventaId = ventaId;
         this.facturaId = facturaId;
-        this.fecha = fecha;
+
         this.vendedorId = vendedorId;
     }
 
@@ -27,9 +26,6 @@ public class CrearFactura extends Command {
         return facturaId;
     }
 
-    public Fecha getFecha() {
-        return fecha;
-    }
 
     public VendedorId getVendedorId() {
         return vendedorId;

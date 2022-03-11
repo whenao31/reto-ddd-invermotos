@@ -50,4 +50,16 @@ public class Cliente extends AggregateEvent<ClienteId> {
     public void crearFinanciacion(FinanciacionId financiacionId, double denomination){
         appendChange(new FinanciacionCreada(financiacionId, denomination)).apply();
     }
+
+    public DatosPersonales datosPersonales() {
+        return datosPersonales;
+    }
+
+    public Financiacion financiacion() {
+        return financiacion;
+    }
+
+    public Fecha fecha() {
+        return fecha;
+    }
 }

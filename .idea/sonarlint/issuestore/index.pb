@@ -17,14 +17,10 @@ g
 7src/main/java/domain/venta/valueobject/TestDriveId.java,8\c\8c2008e563ad83e2346bd163fc8ff6cdaa8b6d58
 h
 8src/main/java/domain/venta/event/TestDriveCancelado.java,6\c\6c2ac9b3a9acb01c8c4934edd2ce887a14ae4bb1
-_
-/src/main/java/domain/venta/entitie/Factura.java,9\6\962c898f677381dd04a7a7bbab10d6c2bed76d87
 a
 1src/main/java/domain/venta/entitie/TestDrive.java,e\0\e0dbb59ba8155aa416f554eb6f6c3adb586e2914
 e
 5src/main/java/domain/venta/event/TestDriveCreado.java,4\0\40463fc128dfa7bb40a75605447a1ed2d131eae4
-c
-3src/main/java/domain/venta/event/FacturaCreada.java,e\d\ed5adde2b4fc3388721a176e910fd4fb96cfce57
 f
 6src/main/java/domain/venta/event/CotizacionCreada.java,c\3\c37396b4e44fa0b1d17a0672a2e780cd60ad1e3f
 b

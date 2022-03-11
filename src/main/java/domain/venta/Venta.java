@@ -28,7 +28,7 @@ public class Venta extends AggregateEvent<VentaId> {
     }
 
     //Reestablecer el estado del agregado
-    private static Venta from(VentaId ventaId, List<DomainEvent> events) {
+    public static Venta from(VentaId ventaId, List<DomainEvent> events) {
         var venta = new Venta(ventaId);
         events.forEach(venta::applyEvent);
         return venta;
@@ -66,4 +66,15 @@ public class Venta extends AggregateEvent<VentaId> {
         appendChange(new TestDriveCreado(testDriveId)).apply();
     }
 
+    public Map<String, TestDrive> testDrives() {
+        return testDrives;
+    }
+
+    public Cotizacion cotizacion() {
+        return cotizacion;
+    }
+
+    public Factura factura() {
+        return factura;
+    }
 }
