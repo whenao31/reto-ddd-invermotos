@@ -20,6 +20,16 @@ public class Cliente extends AggregateEvent<ClienteId> {
         subscribe(new ClienteEventChange(this));
     }
 
+    public Cliente(
+            ClienteId clienteId,
+            DatosPersonalesId datosPersonalesId,
+            Nombre nombre,
+            PuntajeCrediticio puntajeCrediticio){
+        super(clienteId);
+        appendChange(new ClienteCreadoConDatos(datosPersonalesId,nombre, puntajeCrediticio)).apply();
+        subscribe(new ClienteEventChange(this));
+    }
+
     private Cliente(ClienteId clienteId){
         super(clienteId);
         subscribe(new ClienteEventChange(this));
