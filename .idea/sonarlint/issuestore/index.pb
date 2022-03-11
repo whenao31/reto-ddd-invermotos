@@ -27,8 +27,6 @@ c
 3src/main/java/domain/venta/event/FacturaCreada.java,e\d\ed5adde2b4fc3388721a176e910fd4fb96cfce57
 f
 6src/main/java/domain/venta/event/CotizacionCreada.java,c\3\c37396b4e44fa0b1d17a0672a2e780cd60ad1e3f
-a
-1src/main/java/domain/venta/comand/CrearVenta.java,2\8\28cdf7ab1180eaefc5009d357c0e570b2cc6a9a0
 b
 2src/main/java/domain/venta/valueobject/Dinero.java,d\3\d31a241fb28856d17aee559877b08fd9775e8080
 c
@@ -49,8 +47,6 @@ p
 @src/main/java/domain/cliente/valueobject/EstadoFinanciacion.java,8\5\85f754f6885c80e5a0f1bf7f55fe0516abf2c3d0
 g
 7src/main/java/domain/cliente/valueobject/ClienteId.java,0\5\05be88e1e06d04d6d0ffc1fc94ee8fb4bfe1d2cc
-a
-1src/main/java/domain/venta/event/VentaCreada.java,a\2\a2b3c6316c50b535b900b69cce0d37bdb4795433
 a
 1src/main/java/domain/venta/valueobject/Fecha.java,8\8\882203c86ac662144151eaa2ca271df6e3e68a57
 i
