@@ -35,7 +35,7 @@ public class Cliente extends AggregateEvent<ClienteId> {
         subscribe(new ClienteEventChange(this));
     }
 
-    private static Cliente from(ClienteId clienteId, List<DomainEvent> events) {
+    public static Cliente from(ClienteId clienteId, List<DomainEvent> events) {
         var cliente = new Cliente(clienteId);
         events.forEach(cliente::applyEvent);
         return cliente;
@@ -57,8 +57,10 @@ public class Cliente extends AggregateEvent<ClienteId> {
         appendChange(new DatosPersonalesCreados(datosPersonalesId, nombre)).apply();
     }
 
-    public void crearFinanciacion(FinanciacionId financiacionId, double denomination){
-        appendChange(new FinanciacionCreada(financiacionId, denomination)).apply();
+    public void crearFinanciacion(FinanciacionId financiacionId,
+                                  EstadoFinanciacion estadoFinanciacion ,
+                                  Dinero tasaInteres){
+        appendChange(new FinanciacionCreada(financiacionId, estadoFinanciacion, tasaInteres)).apply();
     }
 
     public DatosPersonales datosPersonales() {

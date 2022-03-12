@@ -32,7 +32,7 @@ public class ClienteEventChange extends EventChange {
         });
 
         apply((FinanciacionCreada event) -> {
-            cliente.financiacion = new Financiacion(event.getFinanciacionId(), event.getDenomination());
+            cliente.financiacion = new Financiacion(event.getFinanciacionId(), event.getTasaInteres());
         });
 
 

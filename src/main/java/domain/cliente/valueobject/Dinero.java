@@ -15,7 +15,7 @@ public class Dinero implements ValueObject<BigDecimal> {
     protected Dinero() {
     }
 
-    private Dinero(BigDecimal denomination) {
+    public Dinero(BigDecimal denomination) {
         this.denomination = denomination.setScale(2, RoundingMode.HALF_EVEN);
     }
 

@@ -11,7 +11,7 @@ public class EstadoFinanciacion implements ValueObject<EstadoFinanciacion.Estado
 
     @Override
     public EstadoFinanciacion.Estado value() {
-        return null;
+        return value;
     }
 
     public enum Estado {

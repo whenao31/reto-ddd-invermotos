@@ -9,9 +9,9 @@ public class Financiacion extends Entity<FinanciacionId> {
     private EstadoFinanciacion estado;
     private Dinero tasaInteres;
 
-    public Financiacion(FinanciacionId entityId, double denomination) {
+    public Financiacion(FinanciacionId entityId, Dinero tasaInteres) {
         super(entityId);
-        this.tasaInteres = new Dinero(denomination);
+        this.tasaInteres = new Dinero(0.02);
         this.estado = new EstadoFinanciacion(EstadoFinanciacion.Estado.PENDIENTE);
     }
 

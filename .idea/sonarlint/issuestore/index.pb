@@ -20,15 +20,11 @@ h
 c
 3src/main/java/domain/venta/valueobject/VentaId.java,6\c\6cc4f59e423382bb885a24f53329be2cfa3cd212
 d
-4src/main/java/domain/cliente/valueobject/Dinero.java,3\c\3c9097a3d5d0643590479267093450cd2690e276
-d
 4src/main/java/domain/cliente/valueobject/Nombre.java,9\d\9d27822ccab8304f1b9abc3a064fde07adeeb241
 l
 <src/main/java/domain/cliente/valueobject/FinanciacionId.java,7\5\75ac483c5142ac0d1e417a3e1803457c1ec407f9
 e
 5src/main/java/domain/venta/valueobject/ClienteId.java,e\7\e7959b8d47876bf16ba72d5cfbe13e5ebc09165c
-p
-@src/main/java/domain/cliente/valueobject/EstadoFinanciacion.java,8\5\85f754f6885c80e5a0f1bf7f55fe0516abf2c3d0
 g
 7src/main/java/domain/cliente/valueobject/ClienteId.java,0\5\05be88e1e06d04d6d0ffc1fc94ee8fb4bfe1d2cc
 a
