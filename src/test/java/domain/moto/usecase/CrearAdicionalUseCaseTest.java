@@ -61,5 +61,4 @@ class CrearAdicionalUseCaseTest {
                 new AdicionalCreado(AdicionalId.of("adicional3"), new EstadoAdicional(EstadoAdicional.Fase.PENDIENTE), new Descripcion("desc3"))
         );
     }
-
 }
