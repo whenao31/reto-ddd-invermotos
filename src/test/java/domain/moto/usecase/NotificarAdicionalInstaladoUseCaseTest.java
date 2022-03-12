@@ -1,5 +1,6 @@
 package domain.moto.usecase;
 
+import co.com.sofka.business.generic.BusinessException;
 import co.com.sofka.business.generic.ServiceBuilder;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
@@ -46,6 +47,28 @@ class NotificarAdicionalInstaladoUseCaseTest {
         Assertions.assertTrue(isPresent);
     }
 
+    @Test
+    void problemaNotificacionSMS(){
+        var event = new AdicionalInstalado(AdicionalId.of("adicionalId1"));
+
+        event.setAggregateRootId("motoId1");
+
+        var useCase = new NotificarAdicionalInstaladoUseCase();
+        Mockito.when(repository.getEventsBy("moto", "motoId1")).thenReturn(history());
+        Mockito.when(service.enviarMensajeAFabrica(Mockito.any(FabricaId.class), Mockito.anyString())).thenReturn(false);
+
+        useCase.addRepository(repository);
+        useCase.addServiceBuilder(new ServiceBuilder().addService(service));
+
+        var mensaje = Assertions.assertThrows(BusinessException.class, () -> {
+            UseCaseHandler.getInstance()
+                    .setIdentifyExecutor("motoId1")
+                    .syncExecutor(useCase, new TriggeredEvent<>(event));
+        }).getMessage();
+
+//        Assertions.assertEquals("Problema de envio de notificacion", mensaje);
+        Assertions.assertEquals("No se pudo enviar SMS", mensaje);
+    }
 
     private List<DomainEvent> history(){
         return List.of(

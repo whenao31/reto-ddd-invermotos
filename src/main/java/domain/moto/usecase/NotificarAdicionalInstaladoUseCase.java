@@ -17,7 +17,7 @@ public class NotificarAdicionalInstaladoUseCase extends UseCase<TriggeredEvent<A
         var service = getService(SMSService.class).orElseThrow();
 
         var events = repository().getEventsBy("moto", event.aggregateRootId());
-        System.out.println(event.aggregateRootId());
+//        System.out.println(event.aggregateRootId());
         var moto = Moto.from(MotoId.of(event.aggregateRootId()), events);
         var isOK = service.enviarMensajeAFabrica(
                 moto.fabrica().identity(),
