@@ -45,8 +45,8 @@ public class Cliente extends AggregateEvent<ClienteId> {
         appendChange(new PuntajeCambiado(puntajeCrediticio)).apply();
     }
 
-    public void aprobarFinanciacion(){
-        appendChange(new FinanciacionAprobada()).apply();
+    public void aprobarFinanciacion(FinanciacionId financiacionId){
+        appendChange(new FinanciacionAprobada(financiacionId)).apply();
     }
 
     public void negarFinanciacion(){
