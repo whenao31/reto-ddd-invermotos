@@ -8,7 +8,7 @@ public class NombreFabrica implements ValueObject<String> {
     private final String value;
 
     public NombreFabrica() {
-        this("");
+        this("fabrica1");
     }
 
     public NombreFabrica(String value) {
