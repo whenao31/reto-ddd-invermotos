@@ -1,7 +1,6 @@
 package domain.moto.event;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import domain.moto.DatosMoto;
 import domain.moto.valueobject.Color;
 import domain.moto.valueobject.DatosMotoId;
 import domain.moto.valueobject.Linea;

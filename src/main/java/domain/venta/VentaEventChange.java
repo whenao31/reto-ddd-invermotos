@@ -1,9 +1,9 @@
 package domain.venta;
 
 import co.com.sofka.domain.generic.EventChange;
-import domain.venta.entitie.Cotizacion;
-import domain.venta.entitie.Factura;
-import domain.venta.entitie.TestDrive;
+import domain.venta.entity.Cotizacion;
+import domain.venta.entity.Factura;
+import domain.venta.entity.TestDrive;
 import domain.venta.event.*;
 
 import java.util.HashMap;

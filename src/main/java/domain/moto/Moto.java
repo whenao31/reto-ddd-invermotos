@@ -2,6 +2,9 @@ package domain.moto;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import domain.moto.entity.Adicional;
+import domain.moto.entity.DatosMoto;
+import domain.moto.entity.Fabrica;
 import domain.moto.event.*;
 import domain.moto.valueobject.*;
 

@@ -1,7 +1,6 @@
 package domain.moto.command;
 
 import co.com.sofka.domain.generic.Command;
-import domain.moto.DatosMoto;
 import domain.moto.valueobject.*;
 
 public class CrearMotoConDatosMoto extends Command {

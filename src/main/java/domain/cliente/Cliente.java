@@ -2,8 +2,8 @@ package domain.cliente;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import domain.cliente.entitie.DatosPersonales;
-import domain.cliente.entitie.Financiacion;
+import domain.cliente.entity.DatosPersonales;
+import domain.cliente.entity.Financiacion;
 import domain.cliente.event.*;
 import domain.cliente.valueobject.*;
 

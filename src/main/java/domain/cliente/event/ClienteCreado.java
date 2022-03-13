@@ -1,8 +1,6 @@
 package domain.cliente.event;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import domain.cliente.entitie.DatosPersonales;
-import domain.cliente.entitie.Financiacion;
 import domain.cliente.valueobject.ClienteId;
 import domain.cliente.valueobject.Fecha;
 

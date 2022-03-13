@@ -1,6 +1,9 @@
 package domain.moto;
 
 import co.com.sofka.domain.generic.EventChange;
+import domain.moto.entity.Adicional;
+import domain.moto.entity.DatosMoto;
+import domain.moto.entity.Fabrica;
 import domain.moto.event.*;
 
 import java.util.HashMap;

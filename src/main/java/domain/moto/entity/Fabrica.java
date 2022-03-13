@@ -1,4 +1,4 @@
-package domain.moto;
+package domain.moto.entity;
 
 import co.com.sofka.domain.generic.Entity;
 import domain.moto.valueobject.FabricaId;

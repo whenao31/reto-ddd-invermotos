@@ -1,7 +1,6 @@
 package domain.moto.event;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import domain.moto.DatosMoto;
 import domain.moto.valueobject.*;
 
 public class MotoCreadaConDatos extends DomainEvent {

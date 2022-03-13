@@ -5,7 +5,6 @@ import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.domain.generic.DomainEvent;
 import domain.venta.comand.CrearTestDrive;
-import domain.venta.entitie.TestDrive;
 import domain.venta.event.TestDriveCreado;
 import domain.venta.event.VentaCreada;
 import domain.venta.valueobject.*;
@@ -17,8 +16,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 class CrearTestDriveUseCaseTest {

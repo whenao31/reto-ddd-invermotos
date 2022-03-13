@@ -1,4 +1,4 @@
-package domain.cliente.entitie;
+package domain.cliente.entity;
 
 import co.com.sofka.domain.generic.Entity;
 import domain.cliente.valueobject.Dinero;

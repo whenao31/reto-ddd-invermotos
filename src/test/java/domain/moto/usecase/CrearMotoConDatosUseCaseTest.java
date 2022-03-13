@@ -2,14 +2,11 @@ package domain.moto.usecase;
 
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
-import domain.moto.DatosMoto;
 import domain.moto.command.CrearMotoConDatosMoto;
 import domain.moto.event.MotoCreadaConDatos;
 import domain.moto.valueobject.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CrearMotoConDatosUseCaseTest {
 

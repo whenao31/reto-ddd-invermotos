@@ -1,4 +1,4 @@
-package domain.venta.entitie;
+package domain.venta.entity;
 
 import co.com.sofka.domain.generic.Entity;
 import domain.venta.valueobject.EstadoTestDrive;
